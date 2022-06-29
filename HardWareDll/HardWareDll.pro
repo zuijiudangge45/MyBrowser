@@ -2,4 +2,5 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     HardWareTest \
-    CardReader
+    CardReader \
+    IOServer

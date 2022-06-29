@@ -1,18 +1,24 @@
-﻿#ifndef CARDREADERDONSEE_H
-#define CARDREADERDONSEE_H
+﻿#ifndef DLL_RF_EYE_H
+#define DLL_RF_EYE_H
 
 #include <QtCore/qglobal.h>
+#include <QTimer>
+#include <QObject>
 
-#if defined(CARDREADERDONSEE_LIBRARY)
-#  define CARDREADERDONSEE_EXPORT Q_DECL_EXPORT
+
+#if defined(DLL_RF_EYE_LIBRARY)
+#  define DLL_RF_EYE_EXPORT Q_DECL_EXPORT
 #else
-#  define CARDREADERDONSEE_EXPORT Q_DECL_IMPORT
+#  define DLL_RF_EYE_EXPORT Q_DECL_IMPORT
 #endif
-class CARDREADERDONSEE_EXPORT CardReaderDonsee
+
+struct Private;
+
+class DLL_RF_EYE_EXPORT Dll_rf_eye
 {
 public:
-    CardReaderDonsee();
-    ~CardReaderDonsee();
+    Dll_rf_eye();
+    ~Dll_rf_eye();
     bool init(int port, int baudRate);
     void beep(int msec);
     QString cardId();
@@ -26,4 +32,4 @@ private:
     struct Private *d;
 };
 
-#endif // CARDREADERDONSEE_H
+#endif // DLL_RF_EYE_H

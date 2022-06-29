@@ -2,6 +2,7 @@
 #include "mwrf32.h"         //明华
 #include "log.h"
 #include "cardReaderBase.h"
+#include <QTimer>
 
 struct Dll_rf_eye::Private : public QObject, DLLCardReader
 {
@@ -300,9 +301,12 @@ Dll_rf_eye::~Dll_rf_eye()
     delete d;
 }
 
-bool Dll_rf_eye::init()
+bool Dll_rf_eye::init(int port, int baudRate)
 {
-    return d->init(0, 0);
+    Q_UNUSED(port);
+    Q_UNUSED(baudRate);
+
+    return d->init(NULL, NULL);
 }
 
 void Dll_rf_eye::beep(int msec)

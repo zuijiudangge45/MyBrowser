@@ -2,7 +2,6 @@
 #define DLL_RF_EYE_H
 
 #include <QtCore/qglobal.h>
-#include <QTimer>
 #include <QObject>
 
 
@@ -19,7 +18,7 @@ class DLL_RF_EYE_EXPORT Dll_rf_eye
 public:
     Dll_rf_eye();
     ~Dll_rf_eye();
-    bool init();
+    bool init(int port, int baudRate);
     void beep(int msec);
     QString cardId();
     bool ResetToInitPwd();

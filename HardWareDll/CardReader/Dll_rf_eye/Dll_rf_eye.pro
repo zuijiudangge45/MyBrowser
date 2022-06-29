@@ -43,18 +43,18 @@ OBJECTS_DIR = Obj/Obj
 win32:{
     contains(QT_ARCH, i386):{           #x86
         CONFIG(release, debug|release):{
-            DESTDIR = $$PWD/../bin/win/x86/release
+            DESTDIR = $$PWD/../../bin/cardReader/win/x86/release
         }
         else:CONFIG(debug, debug|release):{
-            DESTDIR = $$PWD/../bin/win/x86/debug
+            DESTDIR = $$PWD/../../bin/cardReader/win/x86/debug
         }
     }
     else:{
         CONFIG(release, debug|release):{
-            DESTDIR = $$PWD/../bin/win/x64/release
+            DESTDIR = $$PWD/../../bin/cardReader/win/x64/release
         }
         else:CONFIG(debug, debug|release):{
-            DESTDIR = $$PWD/../bin/win/x64/debug
+            DESTDIR = $$PWD/../../bin/cardReader/win/x64/debug
         }
     }
 }
