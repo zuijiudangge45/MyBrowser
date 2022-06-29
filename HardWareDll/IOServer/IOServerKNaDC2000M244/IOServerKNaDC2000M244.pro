@@ -41,10 +41,10 @@ OBJECTS_DIR = Obj/Obj
 win32:{
     contains(QT_ARCH, i386):{           #x86
         CONFIG(release, debug|release):{
-            DESTDIR = $$PWD/../../bin/cardReader/win/x86/release
+            DESTDIR = $$PWD/../../bin/IOServer/win/x86/release
         }
         else:CONFIG(debug, debug|release):{
-            DESTDIR = $$PWD/../../bin/cardReader/win/x86/debug
+            DESTDIR = $$PWD/../../bin/IOServer/win/x86/debug
         }
     }
     else:{
@@ -53,6 +53,26 @@ win32:{
         }
         else:CONFIG(debug, debug|release):{
             DESTDIR = $$PWD/../../bin/cardReader/win/x64/debug
+        }
+    }
+}
+
+unix:!macx{
+    contains(QT_ARCH, i386):{           #x86
+        CONFIG(release, debug|release):{
+            DESTDIR = $$PWD/../bin/linux/x86/release
+        }
+        else:CONFIG(debug, debug|release):{
+            DESTDIR = $$PWD/../bin/linux/x86/debug
+#            LIBS += -L$$PWD/../bin/linux/x86/debug/ -lPluginCenter
+        }
+    }
+    else:{                              #x64
+        CONFIG(release, debug|release):{
+            DESTDIR = $$PWD/../../bin/IOServer/linux/x64/release
+        }
+        else:CONFIG(debug, debug|release):{
+            DESTDIR = $$PWD/../../bin/IOServer/linux/x64/debug
         }
     }
 }

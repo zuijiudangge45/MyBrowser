@@ -1,6 +1,11 @@
 TEMPLATE = subdirs
 
-SUBDIRS += \
-    HardWareTest \
-    CardReader \
-    IOServer
+SUBDIRS += HardWareTest
+SUBDIRS += CardReader
+SUBDIRS += IOServer
+
+win32{
+
+}else{
+SUBDIRS -= CardReader
+}

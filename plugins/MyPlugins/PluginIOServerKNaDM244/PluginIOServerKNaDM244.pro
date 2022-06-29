@@ -46,4 +46,24 @@ win32:{
     }
 }
 
-
+unix:!macx{
+    contains(QT_ARCH, i386):{           #x86
+        CONFIG(release, debug|release):{
+            DESTDIR = $$PWD/../bin/linux/x86/release
+        }
+        else:CONFIG(debug, debug|release):{
+            DESTDIR = $$PWD/../bin/linux/x86/debug
+#            LIBS += -L$$PWD/../bin/linux/x86/debug/ -lPluginCenter
+        }
+    }
+    else:{                              #x64
+        CONFIG(release, debug|release):{
+            DESTDIR = $$PWD/../bin/linux/x64/release/plugins
+            LIBS += -L$$PWD/../drivers/IOServer/knadc2000m244/linux/x64/lib/release -lIOServerKNaDC2000M244
+        }
+        else:CONFIG(debug, debug|release):{
+            DESTDIR = $$PWD/../bin/linux/x64/debug/plugins
+            LIBS += -L$$PWD/../drivers/IOServer/knadc2000m244/linux/x64/lib/debug -lIOServerKNaDC2000M244
+        }
+    }
+}
