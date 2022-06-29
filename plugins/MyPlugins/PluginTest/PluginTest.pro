@@ -86,10 +86,10 @@ unix:!macx{
     }
     else:{                              #x64
         CONFIG(release, debug|release):{
-            DESTDIR = $$PWD/../bin/linux/x86/release/
+            DESTDIR = $$PWD/../bin/linux/x64/release/
         }
         else:CONFIG(debug, debug|release):{
-            DESTDIR = $$PWD/../bin/linux/x86/debug/
+            DESTDIR = $$PWD/../bin/linux/x64/debug/
         }
     }
 }

@@ -71,6 +71,7 @@ void MainWindow::on_pushButton_2_clicked()
 //测试m244
 void MainWindow::on_pushButton_3_clicked()
 {
+    qDebug()<<PluginManager::getInstance()->allPlugins().count();
     QPluginLoader *loader = PluginManager::getInstance()->getPlugin("IOServerCNaDM244");
     if(loader)
     {
@@ -92,6 +93,6 @@ void MainWindow::on_pushButton_3_clicked()
     }
     else
     {
-        qDebug()<< "error";
+        qDebug()<< "error get instance";
     }
 }

@@ -63,6 +63,7 @@ void PluginManager::scan(const QString &filepath)
     d->m_names.insert(filepath, json.value("name").toVariant());
     d->m_versions.insert(filepath, json.value("version").toVariant());
     d->m_dependencies.insert(filepath, json.value("dependencies").toArray().toVariantList());
+    qDebug()<< QString("loadPlugin name : %1, version : %2").arg(json.value("name").toString(), json.value("version").toString());
 }
 
 void PluginManager::loadPlugin(const QString &filepath)
@@ -75,8 +76,11 @@ void PluginManager::loadPlugin(const QString &filepath)
 
     //加载插件
     QPluginLoader *loader = new QPluginLoader(filepath);
+    qDebug()<< "filepath:" << filepath;
     if(loader->load())
     {
+        qDebug()<< "load succc:" << filepath;
+
         InterfacePlugin *plugin = qobject_cast<InterfacePlugin*>(loader->instance());
         if(plugin)
         {
