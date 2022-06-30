@@ -2,6 +2,8 @@ QT += network
 TEMPLATE = lib
 CONFIG += plugin
 TARGET = pluginIOServerKNaDM244
+QMAKE_LFLAGS += -Wl,-rpath=./plugins
+
 
 HEADERS += \
     pluginioserverknadm244.h
