@@ -24,11 +24,13 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_4_clicked();
+
 private:
     Ui::MainWindow *ui;
     DonseeTest *m_cardReaderTest;           //读卡器测试界面
     CNaDM244Test *m_ioserverTest;           //io服务器测试界面
     CardReaderInterface *m_cardReader;      //读卡器指针
-    InterfaceIOServer *m_ioserver;
+    InterfaceIOServer *m_ioserver;          //io服务器指针
 };
 #endif // MAINWINDOW_H

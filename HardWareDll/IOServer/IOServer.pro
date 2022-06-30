@@ -1,4 +1,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
+    IOServerKNaDA2KDDA0A0 \
     IOServerKNaDC2000M244

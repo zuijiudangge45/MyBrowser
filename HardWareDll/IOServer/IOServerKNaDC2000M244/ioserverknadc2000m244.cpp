@@ -44,11 +44,15 @@ void IOServerKNaDC2000M244::closeConnect()
 {
     if(m_tcpSocket)
     {
-        m_tcpSocket->close();
-        delete m_tcpSocket;
-        m_tcpSocket = nullptr;
+        m_tcpSocket->disconnect();
+        m_tcpSocket->disconnectFromHost();
+        if (m_tcpSocket->state() == QAbstractSocket::UnconnectedState || m_tcpSocket->waitForDisconnected(3000))
+        {
+            delete m_tcpSocket;
+            m_tcpSocket = nullptr;
+            m_conState = false;
+        }
     }
-    m_conState = false;
 }
 
 bool IOServerKNaDC2000M244::writeData(int DBlock, int value)
@@ -181,6 +185,7 @@ void IOServerKNaDC2000M244::slot_reconnectServer()
     m_conState = false;
     delete  m_tcpSocket;
     m_tcpSocket = nullptr;
+
     m_tcpSocket = new QTcpSocket(this);
     m_tcpSocket->connectToHost(m_strIpAddr, m_port);
 

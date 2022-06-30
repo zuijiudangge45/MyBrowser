@@ -1,8 +1,8 @@
 ﻿#include "cnadm244test.h"
 #include "ui_cnadm244test.h"
 
-CNaDM244Test::CNaDM244Test(QWidget *parent) :
-    QWidget(parent),
+CNaDM244Test::CNaDM244Test(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::CNaDM244Test)
 {
     ui->setupUi(this);
@@ -11,6 +11,20 @@ CNaDM244Test::CNaDM244Test(QWidget *parent) :
 CNaDM244Test::~CNaDM244Test()
 {
     delete ui;
+}
+
+void CNaDM244Test::init(QString pluginName)
+{
+    if(pluginName == "m244")
+    {
+        ui->pushButton_3->setEnabled(false);
+        ui->pushButton_4->setEnabled(false);
+    }
+    else
+    {
+        ui->pushButton->setEnabled(false);
+        ui->pushButton_2->setEnabled(false);
+    }
 }
 //读
 void CNaDM244Test::on_pushButton_clicked()

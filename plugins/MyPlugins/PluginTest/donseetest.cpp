@@ -7,6 +7,7 @@ DonseeTest::DonseeTest(QWidget *parent) :
     ui(new Ui::DonseeTest)
 {
     ui->setupUi(this);
+    this->setAttribute(Qt::WA_DeleteOnClose);
 }
 
 DonseeTest::~DonseeTest()

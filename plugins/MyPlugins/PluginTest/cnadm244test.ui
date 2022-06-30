@@ -13,99 +13,320 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QComboBox" name="comboBox">
-     <item>
-      <property name="text">
-       <string>DI</string>
-      </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout" columnstretch="2,2,5,2">
+     <item row="0" column="0">
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>DI</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO</string>
+        </property>
+       </item>
+      </widget>
      </item>
-     <item>
-      <property name="text">
-       <string>DO</string>
-      </property>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="comboBox_2">
+       <item>
+        <property name="text">
+         <string>D0</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D3</string>
+        </property>
+       </item>
+      </widget>
      </item>
-    </widget>
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="lineEdit"/>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>读</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QComboBox" name="comboBox_3">
+       <item>
+        <property name="text">
+         <string>DO0</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO3</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboBox_4">
+       <item>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string>写</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
-   <item row="0" column="1">
-    <widget class="QComboBox" name="comboBox_2">
-     <item>
-      <property name="text">
-       <string>D0</string>
-      </property>
+   <item>
+    <layout class="QGridLayout" name="gridLayout_2" columnstretch="2,2,5,2">
+     <item row="0" column="0">
+      <widget class="QComboBox" name="comboBox_5">
+       <item>
+        <property name="text">
+         <string>DI</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO</string>
+        </property>
+       </item>
+      </widget>
      </item>
-     <item>
-      <property name="text">
-       <string>D1</string>
-      </property>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="comboBox_6">
+       <item>
+        <property name="text">
+         <string>D0</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D6</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D7</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D9</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D11</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D12</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D13</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D14</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>D15</string>
+        </property>
+       </item>
+      </widget>
      </item>
-     <item>
-      <property name="text">
-       <string>D2</string>
-      </property>
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="lineEdit_2"/>
      </item>
-     <item>
-      <property name="text">
-       <string>D3</string>
-      </property>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="text">
+        <string>读</string>
+       </property>
+      </widget>
      </item>
-    </widget>
-   </item>
-   <item row="0" column="2">
-    <widget class="QLineEdit" name="lineEdit"/>
-   </item>
-   <item row="0" column="3">
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>读</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QComboBox" name="comboBox_3">
-     <item>
-      <property name="text">
-       <string>DO0</string>
-      </property>
+     <item row="1" column="0">
+      <widget class="QComboBox" name="comboBox_7">
+       <item>
+        <property name="text">
+         <string>DO0</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO6</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO7</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO9</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO11</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO12</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO13</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO14</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DO15</string>
+        </property>
+       </item>
+      </widget>
      </item>
-     <item>
-      <property name="text">
-       <string>DO1</string>
-      </property>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboBox_8">
+       <item>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+      </widget>
      </item>
-     <item>
-      <property name="text">
-       <string>DO2</string>
-      </property>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="text">
+        <string>写</string>
+       </property>
+      </widget>
      </item>
-     <item>
-      <property name="text">
-       <string>DO3</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="1" column="3">
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="text">
-      <string>写</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QComboBox" name="comboBox_4">
-     <item>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </item>
-    </widget>
+    </layout>
    </item>
   </layout>
  </widget>
