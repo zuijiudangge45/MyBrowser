@@ -1,15 +1,16 @@
 ﻿#ifndef DLL_RF_EYE_H
 #define DLL_RF_EYE_H
 
+#include <windows.h>
 #include <QtCore/qglobal.h>
-#include <QObject>
-
 
 #if defined(DLL_RF_EYE_LIBRARY)
 #  define DLL_RF_EYE_EXPORT Q_DECL_EXPORT
 #else
 #  define DLL_RF_EYE_EXPORT Q_DECL_IMPORT
 #endif
+
+typedef void (CALLBACK *MSGCardCallBack)(const char *cardId);
 
 struct Private;
 
@@ -18,6 +19,8 @@ class DLL_RF_EYE_EXPORT Dll_rf_eye
 public:
     Dll_rf_eye();
     ~Dll_rf_eye();
+    void setCallBack(MSGCardCallBack msgCardCallBack);
+
     bool init(int port, int baudRate);
     void beep(int msec);
     QString cardId();

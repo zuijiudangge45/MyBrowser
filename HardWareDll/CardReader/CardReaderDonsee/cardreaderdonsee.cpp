@@ -272,6 +272,11 @@ CardReaderDonsee::~CardReaderDonsee()
     delete d;
 }
 
+void CardReaderDonsee::setCallBack(MSGCardCallBack msgCardCallBack)
+{
+    d->setCallBack(msgCardCallBack);
+}
+
 bool CardReaderDonsee::init(int port, int baudRate)
 {
     return d->init(port, baudRate);

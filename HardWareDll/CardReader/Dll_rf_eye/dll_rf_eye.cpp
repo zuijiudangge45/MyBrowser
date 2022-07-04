@@ -301,6 +301,11 @@ Dll_rf_eye::~Dll_rf_eye()
     delete d;
 }
 
+void Dll_rf_eye::setCallBack(MSGCardCallBack msgCardCallBack)
+{
+    d->setCallBack(msgCardCallBack);
+}
+
 bool Dll_rf_eye::init(int port, int baudRate)
 {
     Q_UNUSED(port);
