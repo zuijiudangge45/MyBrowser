@@ -19,7 +19,6 @@ class DLL_RF_EYE_EXPORT Dll_rf_eye
 public:
     Dll_rf_eye();
     ~Dll_rf_eye();
-    void setCallBack(MSGCardCallBack msgCardCallBack);
 
     bool init(int port, int baudRate);
     void beep(int msec);
@@ -28,6 +27,7 @@ public:
     bool initCardPwd();
     bool read(unsigned char secNr, unsigned char _Adr, QString &data);
     bool write(unsigned char secNr, unsigned char _Adr, QString _Data);
+    void setCallBack(MSGCardCallBack msgCardCallBack);
 
 private:
     struct Private;

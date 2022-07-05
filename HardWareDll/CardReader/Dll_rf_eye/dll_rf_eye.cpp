@@ -4,7 +4,7 @@
 #include "cardReaderBase.h"
 #include <QTimer>
 
-struct Dll_rf_eye::Private : public QObject, DLLCardReader
+struct Dll_rf_eye::Private : public QObject
 {
     //    Q_OBJECT
     HANDLE m_icdev;                 //初始化读卡器的句柄
@@ -18,19 +18,19 @@ public:
     Private();
     ~Private();
 
-    virtual bool init(int port, int baudRate) override;
-    virtual void beep(int msec) override;
-    virtual void setCallBack(MSGCardCallBack msgCardCallBack) override;
-    virtual QString findCardId() override;
-    virtual void loadKey(int secNr) override;
-    virtual void loadKey_initial(int secNr) override;
-    virtual bool authentication(int secNr) override;
-    virtual bool changePwd(int secNr) override;
-    virtual bool changePwd_initial(int secNr) override;
-    virtual bool read(unsigned char _Adr, QString &data) override;
-    virtual bool write(unsigned char _Adr, QString _Data) override;
-    virtual void halt() override;
-    virtual void exit() override;
+    virtual bool init(int port, int baudRate) ;
+    virtual void beep(int msec) ;
+    virtual void setCallBack(MSGCardCallBack msgCardCallBack) ;
+    virtual QString findCardId() ;
+    virtual void loadKey(int secNr) ;
+    virtual void loadKey_initial(int secNr) ;
+    virtual bool authentication(int secNr) ;
+    virtual bool changePwd(int secNr) ;
+    virtual bool changePwd_initial(int secNr) ;
+    virtual bool read(unsigned char _Adr, QString &data) ;
+    virtual bool write(unsigned char _Adr, QString _Data) ;
+    virtual void halt() ;
+    virtual void exit() ;
 };
 
 

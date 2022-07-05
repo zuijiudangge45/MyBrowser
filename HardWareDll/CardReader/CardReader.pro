@@ -1,5 +1,6 @@
 TEMPLATE = subdirs
 SUBDIRS += \
     CardReaderDonsee \
-    Dll_rf_eye
+    Dll_rf_eye \
+    ReaderMWRFEYE
 

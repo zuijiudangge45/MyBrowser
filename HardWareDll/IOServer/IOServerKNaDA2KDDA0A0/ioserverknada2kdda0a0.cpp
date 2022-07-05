@@ -133,6 +133,10 @@ bool IOServerKNaDA2KDDA0A0::writeData(int DBlock, int value)
     {        //DO3
         WriteData[9]=0x73;
     }
+    else
+    {
+        return false;
+    }
 
     if(value > 0)
     {
@@ -181,6 +185,10 @@ int IOServerKNaDA2KDDA0A0::readData(IOServerInterface::IOType iotype, int DBlock
         ReadData[7]=0x02;
 
         ReadData[9]=0xC8;
+    }
+    else
+    {
+        return -1;
     }
     qDebug()<<"ReadData : " << QByteArray((char*)ReadData, sizeof(ReadData));
     int sendRe = m_tcpSocket->write((const char*)ReadData, sizeof(ReadData));
@@ -269,6 +277,10 @@ int IOServerKNaDA2KDDA0A0::readData(IOServerInterface::IOType iotype, int DBlock
     else if (DBlock == 15)
     {
         return (m_recvMsg[10] & 0x80) >> 7;
+    }
+    else
+    {
+        return -1;
     }
     return -1;
 }

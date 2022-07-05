@@ -1,8 +1,7 @@
 QT -= gui
-QT += network
 
 TEMPLATE = lib
-DEFINES += IOSERVERKNADA2KDDA0A0_LIBRARY
+DEFINES += READERMWRFEYE_LIBRARY
 
 CONFIG += c++11
 
@@ -18,14 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    ioserverknada2kdda0a0.cpp
+    readermwrfeye.cpp
 
 HEADERS += \
-    IOServerKNaDA2KDDA0A0_global.h \
-    ioserverknada2kdda0a0.h
+    readermwrfeye.h
 
 INCLUDEPATH += \
-    ../include
+    ./include
 
 # Default rules for deployment.
 unix {
@@ -41,39 +39,13 @@ OBJECTS_DIR = Obj/Obj
 
 win32:{
     contains(QT_ARCH, i386):{           #x86
-        CONFIG(release, debug|release):{
-            DESTDIR = $$PWD/../../bin/IOServer/win/x86/release
-        }
-        else:CONFIG(debug, debug|release):{
-            DESTDIR = $$PWD/../../bin/IOServer/win/x86/debug
-        }
-    }
-    else:{
-        CONFIG(release, debug|release):{
-            DESTDIR = $$PWD/../../bin/IOServer/win/x64/release
-        }
-        else:CONFIG(debug, debug|release):{
-            DESTDIR = $$PWD/../../bin/IOServer/win/x64/debug
-        }
-    }
-}
+        LIBS += -L$$PWD/lib/win/x86 -lmwhrf_bj
 
-unix:!macx{
-    contains(QT_ARCH, i386):{           #x86
         CONFIG(release, debug|release):{
-            DESTDIR = $$PWD/../bin/linux/x86/release
+            DESTDIR = $$PWD/../../bin/cardReader/win/x86/release
         }
         else:CONFIG(debug, debug|release):{
-            DESTDIR = $$PWD/../bin/linux/x86/debug
-#            LIBS += -L$$PWD/../bin/linux/x86/debug/ -lPluginCenter
-        }
-    }
-    else:{                              #x64
-        CONFIG(release, debug|release):{
-            DESTDIR = $$PWD/../../bin/IOServer/linux/x64/release
-        }
-        else:CONFIG(debug, debug|release):{
-            DESTDIR = $$PWD/../../bin/IOServer/linux/x64/debug
+            DESTDIR = $$PWD/../../bin/cardReader/win/x86/debug
         }
     }
 }

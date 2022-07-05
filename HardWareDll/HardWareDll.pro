@@ -1,11 +1,10 @@
 TEMPLATE = subdirs
 
 SUBDIRS += HardWareTest
-SUBDIRS += CardReader
 SUBDIRS += IOServer
 
-win32{
-
-}else{
-SUBDIRS -= CardReader
+win32:{
+    contains(QT_ARCH, i386):{           #(win32-x86)
+        SUBDIRS += CardReader
+    }
 }

@@ -1,6 +1,7 @@
 ﻿#ifndef CARDREADERDONSEE_H
 #define CARDREADERDONSEE_H
 
+#include <windows.h>
 #include <QtCore/qglobal.h>
 
 #if defined(CARDREADERDONSEE_LIBRARY)
@@ -8,11 +9,16 @@
 #else
 #  define CARDREADERDONSEE_EXPORT Q_DECL_IMPORT
 #endif
+
+typedef void (CALLBACK *MSGCardCallBack)(const char *cardId);
+
 class CARDREADERDONSEE_EXPORT CardReaderDonsee
 {
 public:
     CardReaderDonsee();
     ~CardReaderDonsee();
+    void setCallBack(MSGCardCallBack msgCardCallBack);
+
     bool init(int port, int baudRate);
     void beep(int msec);
     QString cardId();

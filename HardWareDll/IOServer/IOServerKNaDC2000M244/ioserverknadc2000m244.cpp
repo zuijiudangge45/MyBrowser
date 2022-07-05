@@ -92,6 +92,10 @@ bool IOServerKNaDC2000M244::writeData(int DBlock, int value)
     {        //DO3
         WriteData[9]=0x1c;
     }
+    else
+    {
+        return false;
+    }
 
     if(value > 0)
     {
@@ -133,6 +137,10 @@ int IOServerKNaDC2000M244::readData(IOServerInterface::IOType iotype, int DBlock
     {
         ReadData[9]=0x21;
     }
+    else
+    {
+        return -1;
+    }
 
     int sendRe = m_tcpSocket->write((const char*)ReadData, 12);
     if(sendRe == -1)
@@ -171,6 +179,10 @@ int IOServerKNaDC2000M244::readData(IOServerInterface::IOType iotype, int DBlock
     else if (DBlock == 3)
     {
         return m_recvMsg[16];
+    }
+    else
+    {
+        return -1;
     }
     return -1;
 }

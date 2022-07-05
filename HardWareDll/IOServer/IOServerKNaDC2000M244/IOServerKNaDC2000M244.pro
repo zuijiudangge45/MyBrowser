@@ -49,10 +49,10 @@ win32:{
     }
     else:{
         CONFIG(release, debug|release):{
-            DESTDIR = $$PWD/../../bin/cardReader/win/x64/release
+            DESTDIR = $$PWD/../../bin/IOServer/win/x64/release
         }
         else:CONFIG(debug, debug|release):{
-            DESTDIR = $$PWD/../../bin/cardReader/win/x64/debug
+            DESTDIR = $$PWD/../../bin/IOServer/win/x64/debug
         }
     }
 }
