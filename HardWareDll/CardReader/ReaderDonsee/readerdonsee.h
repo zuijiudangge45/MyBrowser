@@ -1,25 +1,25 @@
-﻿#ifndef READERMWRFEYE_H
-#define READERMWRFEYE_H
+#ifndef READERDONSEE_H
+#define READERDONSEE_H
 
 #include <windows.h>
 #include <QObject>
 #include <QtCore/qglobal.h>
 
-#if defined(READERMWRFEYE_LIBRARY)
-#  define READERMWRFEYE_EXPORT Q_DECL_EXPORT
+#if defined(READERDONSEE_LIBRARY)
+#  define READERDONSEE_EXPORT Q_DECL_EXPORT
 #else
-#  define READERMWRFEYE_EXPORT Q_DECL_IMPORT
+#  define READERDONSEE_EXPORT Q_DECL_IMPORT
 #endif
 
 typedef void (CALLBACK *MSGCardCallBack)(const char *cardId);
 
-class READERMWRFEYE_EXPORT ReaderMWRFEYE : public QObject
+class READERDONSEE_EXPORT ReaderDonsee : public QObject
 {
 public:
-    ReaderMWRFEYE();
-    ~ReaderMWRFEYE();
+    ReaderDonsee();
+    ~ReaderDonsee();
 
-    bool init();
+    bool init(int port, int baudRate);
     void exit();
     void beep(int msec);
     QString cardId();
@@ -30,4 +30,4 @@ public:
     void setCallBack(MSGCardCallBack msgCardCallBack);
 };
 
-#endif // READERMWRFEYE_H
+#endif // READERDONSEE_H
